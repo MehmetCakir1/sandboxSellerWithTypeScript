@@ -5,12 +5,12 @@ import {useState} from "react"
 const Navbar = () => {
   const [isOpen,setIsOpen]=useState(false)
   return (
-    <nav className="bg-black text-white  py-4 px-7">
+    <nav className="bg-blue-900 text-white  py-4 px-7">
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-bold font-[Poppins,sans-serif]">
           SandBox
         </h1>
-        <div className="link  gap-x-5 text-xl hidden md:flex">
+        <div className="font-semibold  gap-x-5 text-xl hidden md:flex">
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact Us</Link>
