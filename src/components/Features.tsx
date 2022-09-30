@@ -1,6 +1,7 @@
 import { GiMoneyStack,GiHealthPotion } from 'react-icons/gi';
 import { FaShippingFast } from 'react-icons/fa';
 import { TbShoppingCartDiscount } from 'react-icons/tb';
+import { useSelector } from 'react-redux/es/exports';
 
 const Features = () => {
   return (
