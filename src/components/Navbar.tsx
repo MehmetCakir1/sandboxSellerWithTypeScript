@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className="link  gap-x-5 text-xl hidden md:flex">
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact">Contact Us</Link>
           <Link to="/services">Services</Link>
         </div>
         <GiHamburgerMenu className="text-white text-3xl md:hidden" onClick={()=>setIsOpen(!isOpen)}/>
@@ -23,7 +23,7 @@ const Navbar = () => {
           <div className="flex flex-col items-center justify-center text-xl">
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact">Contact Us</Link>
           <Link to="/services">Services</Link>
         </div>
       }
