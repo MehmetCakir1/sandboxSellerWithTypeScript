@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { getProducts } from "../app/features/productsSlice";
-import { ProductState } from "../app/features/productsSlice"
 import {useAppDispatch,useAppSelector} from "../app/hooks"
-import { Product } from "../types/interface";
 import SingleProduct from "./SingleProduct";
 
 const Products = () => {
@@ -17,7 +15,7 @@ const Products = () => {
       }, [])
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-9 justify-center items-center">
+    <div className="container m-auto grid md:grid-cols-2 lg:grid-cols-3 gap-9 justify-center items-center">
         {
             allProducts.map((item)=>{
                 return(
