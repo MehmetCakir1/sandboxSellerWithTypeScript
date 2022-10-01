@@ -10,7 +10,7 @@ export interface ProductState {
   newProducts: INewProduct[]
   product: Product
 }
-
+    
 const initialState: ProductState = {
   products: [],
   loading: false,
@@ -18,9 +18,19 @@ const initialState: ProductState = {
   product: <Product>{}
 }
 
+//to get all products
 export const getProducts = createAsyncThunk(
   'products/getProducts', async () => {
       return fetch(`https://dummyjson.com/products`)
+          .then(res => {
+              return res.json()
+          })
+  }
+)
+//to get a single products
+export const getASingleProduct = createAsyncThunk(
+  'products/getASingleProduct', async ({id}:any) => {
+      return fetch(`https://dummyjson.com/products/${id}`)
           .then(res => {
               return res.json()
           })
@@ -42,6 +52,16 @@ const productsSlice =createSlice({
       state.products=action.payload.products
     })
     builder.addCase(getProducts.rejected,(state:ProductState)=>{
+      state.loading=true;
+    })
+    builder.addCase(getASingleProduct.pending,(state:ProductState)=>{
+      state.loading=true;
+    })
+    builder.addCase(getASingleProduct.fulfilled,(state:ProductState,action:PayloadAction<Product>)=>{
+      state.loading=false;
+      state.product=action.payload
+    })
+    builder.addCase(getASingleProduct.rejected,(state:ProductState)=>{
       state.loading=true;
     })
 
