@@ -36,12 +36,39 @@ export const getASingleProduct = createAsyncThunk(
           })
   }
 )
-
+//to add a newproduct
+export const addANewProduct=createAsyncThunk(
+  "products/addANewProduct",async({newProduct}:any)=>{
+    const response = await fetch(`https://dummyjson.com/products/`, {
+      method: "POST",
+      headers: {
+          "Content-type": "application/json"
+      },
+      body: JSON.stringify({
+          title: newProduct.title,
+          description: newProduct.description,
+          price: newProduct.price,
+          discountPercentage: newProduct.discountPercentage,
+          rating: newProduct.rating,
+          stock: newProduct.stock,
+          brand: newProduct.brand,
+          category: newProduct.category,
+          thumbnail: newProduct.thumbnail,
+          images: newProduct.images,
+      })
+  });
+  const data = await response.json()
+  return data;
+  }
+)
 
 const productsSlice =createSlice({
   name:"products",
   initialState,
   reducers:{
+    addNewProduct:(state,action : PayloadAction<INewProduct>)=>{
+      state.products.push(action.payload)
+    }
   },
   extraReducers(builder:any){
     builder.addCase(getProducts.pending,(state:ProductState)=>{
@@ -64,8 +91,18 @@ const productsSlice =createSlice({
     builder.addCase(getASingleProduct.rejected,(state:ProductState)=>{
       state.loading=true;
     })
+    builder.addCase(addANewProduct.pending, (state: ProductState) => {
+      state.loading = true;
+  })
+  builder.addCase(addANewProduct.fulfilled, (state: ProductState, action: PayloadAction<Product>) => {
+      state.loading = false;
+
+  })
+  builder.addCase(addANewProduct.rejected, (state: ProductState) => {
+      state.loading = false;
+  })
 
   }
 })
-
+export const {addNewProduct}=productsSlice.actions
 export default productsSlice.reducer
