@@ -1,7 +1,7 @@
 import { INewProduct } from "../types/interface";
 import { useState } from "react";
 import { nanoid } from "@reduxjs/toolkit";
-import { useAppDispatch } from "../app/hooks";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { addANewProduct, addNewProduct } from "../app/features/productsSlice";
 
 const Services = () => {
@@ -30,7 +30,7 @@ const Services = () => {
   }
   const handleSubmit=(e:any)=>{
     e.preventDefault()
-    dispatch(addANewProduct({newProduct}))
+    dispatch(addANewProduct({newProduct}))//to add to API
     dispatch(addNewProduct(newProduct))
     setNewProduct({
       id: 0,
@@ -67,6 +67,7 @@ const Services = () => {
                 name="title"
                 value={newProduct?.title}
                 onChange={handleChange}
+                required
               />
             </div>
             <div className="flex flex-col items-center justify-center w-6/12">
@@ -81,6 +82,7 @@ const Services = () => {
                 name="stock"
                 value={newProduct?.stock}
                 onChange={handleChange}
+                required
               />
             </div>
           </div>
@@ -97,6 +99,7 @@ const Services = () => {
                 name="description"
                 value={newProduct?.description}
                 onChange={handleChange}
+                required
               />
             </div>
             <div className="flex flex-col items-center justify-center w-6/12">
@@ -111,6 +114,7 @@ const Services = () => {
                 name="brand"
                 value={newProduct?.brand}
                 onChange={handleChange}
+                required
               />
             </div>
           </div>
@@ -127,6 +131,7 @@ const Services = () => {
                 name="price"
                 value={newProduct?.price}
                 onChange={handleChange}
+                required
               />
             </div>
             <div className="flex flex-col items-center justify-center w-6/12">
@@ -141,6 +146,7 @@ const Services = () => {
                 name="category"
                 value={newProduct?.category}
                 onChange={handleChange}
+                required
               />
             </div>
           </div>
@@ -157,6 +163,7 @@ const Services = () => {
                 name="discountPercentage"
                 value={newProduct?.discountPercentage}
                 onChange={handleChange}
+                required
               />
             </div>
             <div className="flex flex-col items-center justify-center w-6/12">
@@ -171,6 +178,7 @@ const Services = () => {
                 name="thumbnail"
                 value={newProduct?.thumbnail}
                 onChange={handleChange}
+                required
               />
             </div>
           </div>
@@ -187,6 +195,7 @@ const Services = () => {
                 name="rating"
                 value={newProduct?.rating}
                 onChange={handleChange}
+                required
               />
             </div>
             <div className="flex flex-col items-center justify-center w-6/12">
@@ -201,11 +210,12 @@ const Services = () => {
                 name="images"
                 value={newProduct?.images}
                 onChange={handleChange}
+                required
               />
             </div>
           </div>
         </section>
-        <button className="bg-blue-600 text-white font-semibold text-xl py-1 px-3 mt-4">
+        <button type="submit" className="bg-blue-600 text-white font-semibold text-xl py-1 px-3 mt-4">
           Add Product
         </button>
       </form>

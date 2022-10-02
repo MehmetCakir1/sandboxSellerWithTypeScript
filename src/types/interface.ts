@@ -1,8 +1,8 @@
 export interface IProducts {
     products: Product[]
-    total: number
-    skip: number
-    limit: number
+    // total: number
+    // skip: number
+    // limit: number
   }
   
   export interface Product {

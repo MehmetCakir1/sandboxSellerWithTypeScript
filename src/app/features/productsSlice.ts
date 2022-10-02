@@ -66,11 +66,10 @@ const productsSlice =createSlice({
   name:"products",
   initialState,
   reducers:{
-    addNewProduct:(state,action : PayloadAction<INewProduct>)=>{
-      state.products.push(action.payload)
-    }
+    addNewProduct : (state,action : PayloadAction<INewProduct>)=> {state.newProducts = [...state.newProducts, action.payload]}
   },
   extraReducers(builder:any){
+    //TO GET ALL PRODUCTS
     builder.addCase(getProducts.pending,(state:ProductState)=>{
       state.loading=true;
     })
@@ -81,6 +80,7 @@ const productsSlice =createSlice({
     builder.addCase(getProducts.rejected,(state:ProductState)=>{
       state.loading=true;
     })
+    //TO GET A SINGLE PRODUCT
     builder.addCase(getASingleProduct.pending,(state:ProductState)=>{
       state.loading=true;
     })
@@ -91,12 +91,13 @@ const productsSlice =createSlice({
     builder.addCase(getASingleProduct.rejected,(state:ProductState)=>{
       state.loading=true;
     })
+    //TO POST
     builder.addCase(addANewProduct.pending, (state: ProductState) => {
       state.loading = true;
   })
   builder.addCase(addANewProduct.fulfilled, (state: ProductState, action: PayloadAction<Product>) => {
       state.loading = false;
-
+      //we can not add any product to this API
   })
   builder.addCase(addANewProduct.rejected, (state: ProductState) => {
       state.loading = false;
