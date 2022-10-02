@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux/es/exports';
 
 const Features = () => {
   return (
-    <section className='container grid grid-cols-4 gap-4 m-auto my-5'>
+    <section className='container grid grid-cols-2 sm:grid-cols-4 gap-4 m-auto my-5 p-3'>
     <div className='py-5 flex flex-col justify-center items-center text-orange-600  shadow-xl bg-blue-100 rounded-xl hover:scale-110' >
         <GiMoneyStack className='text-4xl'/>
         <p  className='text-xl'>Cheap</p>

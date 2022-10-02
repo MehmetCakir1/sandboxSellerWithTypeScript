@@ -54,8 +54,8 @@ const Services = () => {
       </h1>
       <form onSubmit={handleSubmit}>
         <section className="w-full max-w-3xl m-auto">
-          <div className="flex justify-center items-center mt-2">
-            <div className="flex flex-col items-center justify-center w-6/12">
+          <div className="flex flex-col sm:flex-row justify-center items-center mt-2">
+            <div className="flex flex-col items-center justify-center w-full sm:w-6/12">
               <label htmlFor="title" className="text-xl">
                 Title
               </label>
@@ -70,7 +70,7 @@ const Services = () => {
                 required
               />
             </div>
-            <div className="flex flex-col items-center justify-center w-6/12">
+            <div className="flex flex-col items-center justify-center w-full sm:w-6/12">
               <label htmlFor="stock" className="text-xl">
                 Stock
               </label>
@@ -86,8 +86,8 @@ const Services = () => {
               />
             </div>
           </div>
-          <div className="flex justify-center items-center mt-2">
-            <div className="flex flex-col items-center justify-center w-6/12">
+          <div className="flex flex-col sm:flex-row justify-center items-center mt-2">
+            <div className="flex flex-col items-center justify-center w-full sm:w-6/12">
               <label htmlFor="description" className="text-xl">
                 Description
               </label>
@@ -102,7 +102,7 @@ const Services = () => {
                 required
               />
             </div>
-            <div className="flex flex-col items-center justify-center w-6/12">
+            <div className="flex flex-col items-center justify-center w-full sm:w-6/12">
               <label htmlFor="brand" className="text-xl">
                 Brand
               </label>
@@ -118,8 +118,8 @@ const Services = () => {
               />
             </div>
           </div>
-          <div className="flex justify-center items-center mt-2">
-            <div className="flex flex-col items-center justify-center w-6/12">
+          <div className="flex flex-col sm:flex-row justify-center items-center mt-2">
+            <div className="flex flex-col items-center justify-center w-full sm:w-6/12">
               <label htmlFor="price" className="text-xl">
                 Price
               </label>
@@ -134,7 +134,7 @@ const Services = () => {
                 required
               />
             </div>
-            <div className="flex flex-col items-center justify-center w-6/12">
+            <div className="flex flex-col items-center justify-center w-full sm:w-6/12">
               <label htmlFor="category" className="text-xl">
                 Category
               </label>
@@ -150,8 +150,8 @@ const Services = () => {
               />
             </div>
           </div>
-          <div className="flex justify-center items-center mt-2">
-            <div className="flex flex-col items-center justify-center w-6/12">
+          <div className="flex flex-col sm:flex-row justify-center items-center mt-2">
+            <div className="flex flex-col items-center justify-center w-full sm:w-6/12">
               <label htmlFor="discount" className="text-xl">
                 Discount Percentage
               </label>
@@ -166,7 +166,7 @@ const Services = () => {
                 required
               />
             </div>
-            <div className="flex flex-col items-center justify-center w-6/12">
+            <div className="flex flex-col items-center justify-center w-full sm:w-6/12">
               <label htmlFor="thumbnail" className="text-xl">
                 Thumbnail
               </label>
@@ -182,8 +182,8 @@ const Services = () => {
               />
             </div>
           </div>
-          <div className="flex justify-center items-center mt-2">
-            <div className="flex flex-col items-center justify-center w-6/12">
+          <div className="flex flex-col sm:flex-row justify-center items-center mt-2">
+            <div className="flex flex-col items-center justify-center w-full sm:w-6/12">
               <label htmlFor="rating" className="text-xl">
                 Rating
               </label>
@@ -198,7 +198,7 @@ const Services = () => {
                 required
               />
             </div>
-            <div className="flex flex-col items-center justify-center w-6/12">
+            <div className="flex flex-col items-center justify-center w-full sm:w-6/12">
               <label htmlFor="images" className="text-xl">
                 Images
               </label>

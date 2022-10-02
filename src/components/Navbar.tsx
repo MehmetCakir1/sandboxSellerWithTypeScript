@@ -11,22 +11,22 @@ const Navbar = () => {
           SandBox
         </Link>
         <div className="font-semibold  gap-x-5 text-xl hidden md:flex">
-          <p><NavLink to="/" className={({ isActive }) => isActive ? "text-red-500" : "text-white"}>Home</NavLink></p> 
+          <p><NavLink to="/" end className={({ isActive }) => isActive ? "text-red-500" : "text-white"}>Home</NavLink></p> 
           <p><NavLink to="/about" className={({ isActive }) => isActive ? "text-red-500" : "text-white"}>About</NavLink></p> 
           <p><NavLink to="/contact" className={({ isActive }) => isActive ? "text-red-500" : "text-white"}>Contact Us</NavLink></p>
           <p><NavLink to="/services" className={({ isActive }) => isActive ? "text-red-500" : "text-white"}>Services</NavLink></p>
         </div>
         <GiHamburgerMenu className="text-white text-3xl md:hidden" onClick={()=>setIsOpen(!isOpen)}/>
       </div>
-      {/* {
+      {
         isOpen &&
-          <div className="flex flex-col items-center justify-center text-xl">
-          <NavLink to="/" className={({ isActive }) => isActive ? "text-red-500" : "text-white"}>Home</NavLink>
+          <div className="flex flex-col items-center justify-center text-xl md:hidden">
+          <NavLink to="/" end className={({ isActive }) => isActive ? "text-red-500" : "text-white"}>Home</NavLink>
           <NavLink to="/about" className={({ isActive }) => isActive ? "text-red-500" : "text-white"}>About</NavLink>
           <NavLink to="/contact" className={({ isActive }) => isActive ? "text-red-500" : "text-white"}>Contact Us</NavLink>
           <NavLink to="/services" className={({ isActive }) => isActive ? "text-red-500" : "text-white"}>Services</NavLink>
         </div>
-      } */}
+      }
 
 
     </nav>

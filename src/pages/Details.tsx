@@ -25,14 +25,14 @@ const Details = () => {
         <div className='flex flex-col lg:flex-row container m-auto py-5'>
       <div className='lg:w-6/12'>
         <h1 className='font-bold text-3xl px-3'>{title}</h1>
-        <img src={thumbnail} alt={title} className="w-full h-[25rem] p-3 object-cover " />
+        <img src={thumbnail} alt={title} className="w-full h-[25rem] p-3  " />
         <p className='p-3 text-lg'>{description}</p>
       </div>
       <div className='lg:w-6/12'>
         <h1 className='font-bold text-2xl px-3'>Tags</h1>
         <p className='text-xl px-3 py-2 capitalize'>{category}</p>
         <h1 className='px-3 py-3 lg:py-1 text-2xl font-bold'>Images</h1>
-        <div className='grid grid-cols-4 gap-3 px-3 py-3 lg:py-0'>
+        <div className='grid grid-cols-2 sm:grid-cols-4 gap-3 px-3 py-3 lg:py-0'>
           {images?.map((item,index)=>{
           return(
             <img src={item} alt={title} key={index} className="h-[6.5rem] w-full object-cover border border-1 border-blue-600" />
